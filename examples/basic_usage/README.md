@@ -1,38 +1,101 @@
-# Launch an example EC2 instance in a new VPC #
+# Basic usage of provisionaccount-role-tf-module #
 
-## Usage ##
+This example directory contains Terraform code to provision an example AWS
+account called "Pettifogger0".  It creates an IAM role that allows sufficient
+permissions to provision all AWS resources in this account.  This role
+has a trust relationship with the users account.
 
-To run this example you need to execute the `terraform init` command
-followed by the `terraform apply` command.
+In order to use this example code, you will need to either create your own
+Pettifogger0 account or replace references to it with an account that you
+already have created.
 
-Note that this example may create resources which cost money. Run
-`terraform destroy` when you no longer need these resources.
+## Bootstrapping this account ##
+
+Note that this account must be bootstrapped.  This is because there is
+no IAM role that can be assumed to build out these resources.
+Therefore you must first apply this Terraform code with programmatic
+credentials for AWSAdministratorAccess as obtained for the example
+Pettifogger0 account from the AWS SSO page.
+
+To do this, follow these steps:
+
+1. Comment out the `profile = "example-pettifogger0-provisionaccount"`
+   line for the "default" provider in `providers.tf` and directly
+   below that uncomment the line `profile =
+   "example-pettifogger0-account-admin"`.
+1. Create a new AWS profile called `example-pettifogger0-account-admin`
+   in your Boto3 configuration using the "AWSAdministratorAccess"
+   credentials (access key ID, secret access key, and session token)
+   as obtained from the example Pettifogger0 account:
+
+   ```console
+   [example-pettifogger0-account-admin]
+   aws_access_key_id = <MY_ACCESS_KEY_ID>
+   aws_secret_access_key = <MY_SECRET_ACCESS_KEY>
+   aws_session_token = <MY_SESSION_TOKEN>
+   ```
+
+1. Create a Terraform workspace (if you haven't already done so) by running
+   `terraform workspace new <workspace_name>`
+1. Create a `<workspace_name>.tfvars` file with all of the required
+   variables (see [Inputs](#Inputs) below for details):
+
+   ```console
+   users_account_id = "222222222222"
+   ```
+
+1. Run the command `terraform init`.
+1. Run the command `terraform apply
+   -var-file=<workspace_name>.tfvars`.
+1. Revert the changes you made to `providers.tf` in step 1.
+1. Run the command `terraform apply
+    -var-file=<workspace_name>.tfvars`.
+
+At this point the account has been bootstrapped, and you can apply
+future changes by simply running `terraform apply
+-var-file=<workspace_name>.tfvars`.
 
 ## Requirements ##
 
-No requirements.
+| Name | Version |
+|------|---------|
+| terraform | ~> 0.12.0 |
+| aws | ~> 3.0 |
 
 ## Providers ##
 
-| Name | Version |
-|------|---------|
-| aws | n/a |
+No provider.
 
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| ami_owner_account_id | The ID of the AWS account that owns the AMI, or "self" if the AMI is owned by the same account as the provisioner. | `string` | `self` | no |
-| aws_availability_zone | The AWS availability zone to deploy into (e.g. a, b, c, etc.) | `string` | `a` | no |
-| aws_region | The AWS region to deploy into (e.g. us-east-1). | `string` | `us-east-1` | no |
-| tf_role_arn | The ARN of the role that can terraform non-specialized resources. | `string` | n/a | yes |
+| aws_region | The AWS region where the non-global resources for the example Pettifogger0 account are to be provisioned (e.g. "us-east-1"). | `string` | `us-east-1` | no |
+| provisionaccount_role_description | The description to associate with the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. | `string` | `Allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account.` | no |
+| provisionaccount_role_name | The name to assign the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. | `string` | `ProvisionAccount` | no |
+| tags | Tags to apply to all AWS resources provisioned. | `map(string)` | `{}` | no |
+| users_account_id | The ID of the users account.  This account will be allowed to assume the role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. | `string` | n/a | yes |
 
 ## Outputs ##
 
 | Name | Description |
 |------|-------------|
-| arn | The EC2 instance ARN |
-| availability_zone | The AZ where the EC2 instance is deployed |
-| id | The EC2 instance ID |
-| private_ip | The private IP of the EC2 instance |
-| subnet_id | The ID of the subnet where the EC2 instance is deployed |
+| provisionaccount_role_arn | The ARN of the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. |
+
+## Contributing ##
+
+We welcome contributions!  Please see
+[`CONTRIBUTING.md`](../../../CONTRIBUTING.md) for details.
+
+## License ##
+
+This project is in the worldwide [public domain](LICENSE).
+
+This project is in the public domain within the United States, and
+copyright and related rights in the work worldwide are waived through
+the [CC0 1.0 Universal public domain
+dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+
+All contributions to this project will be released under the CC0
+dedication. By submitting a pull request, you are agreeing to comply
+with this waiver of copyright interest.

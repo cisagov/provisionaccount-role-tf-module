@@ -1,24 +1,4 @@
-output "id" {
-  value       = module.example.id
-  description = "The EC2 instance ID"
-}
-
-output "arn" {
-  value       = module.example.arn
-  description = "The EC2 instance ARN"
-}
-
-output "availability_zone" {
-  value       = module.example.availability_zone
-  description = "The AZ where the EC2 instance is deployed"
-}
-
-output "private_ip" {
-  value       = module.example.private_ip
-  description = "The private IP of the EC2 instance"
-}
-
-output "subnet_id" {
-  value       = module.example.subnet_id
-  description = "The ID of the subnet where the EC2 instance is deployed"
+output "provisionaccount_role_arn" {
+  value       = module.provisionaccount.provisionaccount_role_arn
+  description = "The ARN of the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account."
 }
