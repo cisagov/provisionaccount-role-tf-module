@@ -17,23 +17,23 @@ details on Terraform modules and the standard module structure.
 ## Usage ##
 
 ```hcl
-module "example" {
+module "provisionaccount" {
   source = "github.com/cisagov/provisionaccount-role-tf-module"
 
-  aws_region            = "us-west-1"
-  aws_availability_zone = "b"
-  subnet_id             = "subnet-0123456789abcdef0"
-
-  tags = {
-    Key1 = "Value1"
-    Key2 = "Value2"
+  provisionaccount_role_description          = "Allows sufficient permissions to provision all AWS resources in the DNS account."
+  provisionaccount_role_name                 = "ProvisionAccount"
+  tags                                       = {
+    Team        = "My Team"
+    Application = "Sweet Application"
+    Workspace   = "production"
   }
+  users_account_id                           = "111111111111"
 }
 ```
 
 ## Examples ##
 
-* [Deploying into the default VPC](https://github.com/cisagov/provisionaccount-role-tf-module/tree/develop/examples/default_vpc)
+* [Basic Usage](https://github.com/cisagov/provisionaccount-role-tf-module/tree/develop/examples/basic_usage)
 
 ## Requirements ##
 
