@@ -64,23 +64,33 @@ future changes by simply running `terraform apply
 
 ## Providers ##
 
-No provider.
+No providers.
+
+## Modules ##
+
+| Name | Source | Version |
+|------|--------|---------|
+| provisionaccount | ../.. |  |
+
+## Resources ##
+
+No resources.
 
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| aws_region | The AWS region where the non-global resources for the example Pettifogger0 account are to be provisioned (e.g. "us-east-1"). | `string` | `us-east-1` | no |
-| provisionaccount_role_description | The description to associate with the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. | `string` | `Allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account.` | no |
-| provisionaccount_role_name | The name to assign the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. | `string` | `ProvisionAccount` | no |
+| aws\_region | The AWS region where the non-global resources for the example Pettifogger0 account are to be provisioned (e.g. "us-east-1"). | `string` | `"us-east-1"` | no |
+| provisionaccount\_role\_description | The description to associate with the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. | `string` | `"Allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account."` | no |
+| provisionaccount\_role\_name | The name to assign the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. | `string` | `"ProvisionAccount"` | no |
 | tags | Tags to apply to all AWS resources provisioned. | `map(string)` | `{}` | no |
-| users_account_id | The ID of the users account.  This account will be allowed to assume the role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. | `string` | n/a | yes |
+| users\_account\_id | The ID of the users account.  This account will be allowed to assume the role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. | `string` | n/a | yes |
 
 ## Outputs ##
 
 | Name | Description |
 |------|-------------|
-| provisionaccount_role_arn | The ARN of the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. |
+| provisionaccount\_role\_arn | The ARN of the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. |
 
 ## Contributing ##
 

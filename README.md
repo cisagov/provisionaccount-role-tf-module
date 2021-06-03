@@ -22,11 +22,6 @@ module "provisionaccount" {
 
   provisionaccount_role_description          = "Allows sufficient permissions to provision all AWS resources in the DNS account."
   provisionaccount_role_name                 = "ProvisionAccount"
-  tags                                       = {
-    Team        = "My Team"
-    Application = "Sweet Application"
-    Workspace   = "production"
-  }
   users_account_id                           = "111111111111"
 }
 ```
@@ -40,29 +35,40 @@ module "provisionaccount" {
 | Name | Version |
 |------|---------|
 | terraform | ~> 0.12.0 |
-| aws | ~> 3.0 |
+| aws | ~> 3.38 |
 
 ## Providers ##
 
 | Name | Version |
 |------|---------|
-| aws | ~> 3.0 |
+| aws | ~> 3.38 |
+
+## Modules ##
+
+No modules.
+
+## Resources ##
+
+| Name | Type |
+|------|------|
+| [aws_iam_role.provisionaccount_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy_attachment.iamfullaccess_policy_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_iam_policy_document.assume_role_doc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| aws_region | The AWS region where the non-global resources for the new account are to be provisioned (e.g. "us-east-1"). | `string` | `us-east-1` | no |
-| provisionaccount_role_description | The description to associate with the IAM role that allows sufficient permissions to provision all AWS resources in the new account (e.g. "Allows sufficient permissions to provision all AWS resources in the DNS account."). | `string` | n/a | yes |
-| provisionaccount_role_name | The name to assign the IAM role that allows sufficient permissions to provision all AWS resources in the new account (e.g. "ProvisionAccount"). | `string` | n/a | yes |
-| tags | Tags to apply to all AWS resources provisioned. | `map(string)` | `{}` | no |
-| users_account_id | The ID of the users account.  This account will be allowed to assume the role that allows sufficient permissions to provision all AWS resources in the new account. | `string` | n/a | yes |
+| aws\_region | The AWS region where the non-global resources for the new account are to be provisioned (e.g. "us-east-1"). | `string` | `"us-east-1"` | no |
+| provisionaccount\_role\_description | The description to associate with the IAM role that allows sufficient permissions to provision all AWS resources in the new account (e.g. "Allows sufficient permissions to provision all AWS resources in the DNS account."). | `string` | n/a | yes |
+| provisionaccount\_role\_name | The name to assign the IAM role that allows sufficient permissions to provision all AWS resources in the new account (e.g. "ProvisionAccount"). | `string` | n/a | yes |
+| users\_account\_id | The ID of the users account.  This account will be allowed to assume the role that allows sufficient permissions to provision all AWS resources in the new account. | `string` | n/a | yes |
 
 ## Outputs ##
 
 | Name | Description |
 |------|-------------|
-| provisionaccount_role | The IAM role that allows sufficient permissions to provision all AWS resources in this account. |
+| provisionaccount\_role | The IAM role that allows sufficient permissions to provision all AWS resources in this account. |
 
 ## Notes ##
 
