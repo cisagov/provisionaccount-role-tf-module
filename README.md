@@ -28,7 +28,7 @@ module "provisionaccount" {
 
 ## Examples ##
 
-* [Basic Usage](https://github.com/cisagov/provisionaccount-role-tf-module/tree/develop/examples/basic_usage)
+- [Basic Usage](https://github.com/cisagov/provisionaccount-role-tf-module/tree/develop/examples/basic_usage)
 
 ## Requirements ##
 
