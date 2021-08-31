@@ -59,8 +59,8 @@ future changes by simply running `terraform apply
 
 | Name | Version |
 |------|---------|
-| terraform | ~> 0.12.0 |
-| aws | ~> 3.0 |
+| terraform | ~> 0.13.0 |
+| aws | ~> 3.38 |
 
 ## Providers ##
 
@@ -70,7 +70,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| provisionaccount | ../.. |  |
+| provisionaccount | ../.. | n/a |
 
 ## Resources ##
 
