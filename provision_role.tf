@@ -13,3 +13,9 @@ resource "aws_iam_role_policy_attachment" "iamfullaccess_policy_attachment" {
   policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
   role       = aws_iam_role.provisionaccount_role.name
 }
+
+# This policy allows us to request changes to default service quotas
+resource "aws_iam_role_policy_attachment" "servicequotasfullaccess_policy_attachment" {
+  policy_arn = "arn:aws:iam::aws:policy/ServiceQuotasFullAccess"
+  role       = aws_iam_role.provisionaccount_role.name
+}
