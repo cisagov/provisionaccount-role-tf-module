@@ -2,17 +2,9 @@
 
 [![GitHub Build Status](https://github.com/cisagov/provisionaccount-role-tf-module/workflows/build/badge.svg)](https://github.com/cisagov/provisionaccount-role-tf-module/actions)
 
-This is a generic skeleton project that can be used to quickly get a
-new [cisagov](https://github.com/cisagov) [Terraform
-module](https://www.terraform.io/docs/modules/index.html) GitHub
-repository started.  This skeleton project contains [licensing
-information](LICENSE), as well as [pre-commit
-hooks](https://pre-commit.com) and
-[GitHub Actions](https://github.com/features/actions) configurations
-appropriate for the major languages that we use.
-
-See [here](https://www.terraform.io/docs/modules/index.html) for more
-details on Terraform modules and the standard module structure.
+A Terraform module to create an AWS IAM role with permissions to provision
+any IAM resources in an AWS account, and trust a different AWS account so
+that the role can be assumed via IAM.
 
 ## Usage ##
 
