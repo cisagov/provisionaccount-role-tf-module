@@ -24,6 +24,18 @@ variable "users_account_id" {
 #
 # These parameters have reasonable defaults.
 # ------------------------------------------------------------------------------
+variable "sns_policy_description" {
+  type        = string
+  description = "The description to associate with the IAM policy that allows sufficient permissions to create and subscribe to a generic notification topic for CloudWatch alarms in the new account."
+  default     = "Allows sufficient permissions to create and subscribe to a generic notification topic for CloudWatch alarms in the new account."
+}
+
+variable "sns_policy_name" {
+  type        = string
+  description = "The name to assign the IAM policy that allows sufficient permissions to create and subscribe to a generic notification topic for CloudWatch alarms in the new account."
+  default     = "CWAlarmSNSTopicPolicy"
+}
+
 variable "aws_region" {
   type        = string
   description = "The AWS region where the non-global resources for the new account are to be provisioned (e.g. \"us-east-1\")."
