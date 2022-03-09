@@ -59,7 +59,7 @@ No modules.
 | provisionaccount\_role\_description | The description to associate with the IAM role that allows sufficient permissions to provision all AWS resources in the new account (e.g. "Allows sufficient permissions to provision all AWS resources in the DNS account."). | `string` | n/a | yes |
 | provisionaccount\_role\_name | The name to assign the IAM role that allows sufficient permissions to provision all AWS resources in the new account (e.g. "ProvisionAccount"). | `string` | n/a | yes |
 | sns\_policy\_description | The description to associate with the IAM policy that allows sufficient permissions to create and subscribe to a generic notification topic for CloudWatch alarms in the new account. | `string` | `"Allows sufficient permissions to create and subscribe to a generic notification topic for CloudWatch alarms in the new account."` | no |
-| sns\_policy\_name | The name to assign with the IAM policy that allows sufficient permissions to create and subscribe to a generic notification topic for CloudWatch alarms in the new account. | `string` | `"CWAlarmSNSTopicPolicy"` | no |
+| sns\_policy\_name | The name to assign the IAM policy that allows sufficient permissions to create and subscribe to a generic notification topic for CloudWatch alarms in the new account. | `string` | `"CWAlarmSNSTopicPolicy"` | no |
 | users\_account\_id | The ID of the users account.  This account will be allowed to assume the role that allows sufficient permissions to provision all AWS resources in the new account. | `string` | n/a | yes |
 
 ## Outputs ##

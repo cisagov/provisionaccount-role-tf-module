@@ -32,7 +32,7 @@ variable "sns_policy_description" {
 
 variable "sns_policy_name" {
   type        = string
-  description = "The name to assign with the IAM policy that allows sufficient permissions to create and subscribe to a generic notification topic for CloudWatch alarms in the new account."
+  description = "The name to assign the IAM policy that allows sufficient permissions to create and subscribe to a generic notification topic for CloudWatch alarms in the new account."
   default     = "CWAlarmSNSTopicPolicy"
 }
 
