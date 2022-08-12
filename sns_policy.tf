@@ -11,6 +11,7 @@ data "aws_iam_policy_document" "sns" {
       "sns:DeleteTopic",
       "sns:GetSubscriptionAttributes",
       "sns:GetTopicAttributes",
+      "sns:ListTagsForResource",
       "sns:SetTopicAttributes",
       "sns:Subscribe",
       "sns:Unsubscribe",
