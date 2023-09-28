@@ -25,3 +25,10 @@ resource "aws_iam_role_policy_attachment" "sns_policy_attachment" {
   policy_arn = aws_iam_policy.sns.arn
   role       = aws_iam_role.provisionaccount_role.name
 }
+
+# This policy allows us to create EventBridge event rules and connect
+# them to targets
+resource "aws_iam_role_policy_attachment" "eventbridge_policy_attachment" {
+  policy_arn = aws_iam_policy.eventbridge.arn
+  role       = aws_iam_role.provisionaccount_role.name
+}
