@@ -22,18 +22,19 @@ module "provisionaccount" {
 
 - [Basic Usage](https://github.com/cisagov/provisionaccount-role-tf-module/tree/develop/examples/basic_usage)
 
+<!-- BEGIN_TF_DOCS -->
 ## Requirements ##
 
 | Name | Version |
 |------|---------|
 | terraform | ~> 1.0 |
-| aws | ~> 3.38 |
+| aws | ~> 4.9 |
 
 ## Providers ##
 
 | Name | Version |
 |------|---------|
-| aws | ~> 3.38 |
+| aws | ~> 4.9 |
 
 ## Modules ##
 
@@ -72,6 +73,7 @@ No modules.
 | Name | Description |
 |------|-------------|
 | provisionaccount\_role | The IAM role that allows sufficient permissions to provision all AWS resources in this account. |
+<!-- END_TF_DOCS -->
 
 ## Notes ##
 
