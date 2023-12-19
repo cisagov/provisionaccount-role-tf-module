@@ -10,6 +10,7 @@ data "aws_iam_policy_document" "eventbridge" {
     actions = [
       "events:DeleteRule",
       "events:DescribeRule",
+      "events:ListTagsForResource",
       "events:ListTargetsByRule",
       "events:PutRule",
       "events:PutTargets",
