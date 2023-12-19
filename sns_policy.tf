@@ -14,6 +14,7 @@ data "aws_iam_policy_document" "sns" {
       "sns:ListTagsForResource",
       "sns:SetTopicAttributes",
       "sns:Subscribe",
+      "sns:TagResource",
       "sns:Unsubscribe",
     ]
     resources = ["*"]
