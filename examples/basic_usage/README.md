@@ -55,12 +55,13 @@ At this point the account has been bootstrapped, and you can apply
 future changes by simply running `terraform apply
 -var-file=<workspace_name>.tfvars`.
 
+<!-- BEGIN_TF_DOCS -->
 ## Requirements ##
 
 | Name | Version |
 |------|---------|
 | terraform | ~> 1.0 |
-| aws | ~> 4.9 |
+| aws | ~> 5.0 |
 
 ## Providers ##
 
@@ -91,6 +92,7 @@ No resources.
 | Name | Description |
 |------|-------------|
 | provisionaccount\_role\_arn | The ARN of the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. |
+<!-- END_TF_DOCS -->
 
 ## Contributing ##
 
