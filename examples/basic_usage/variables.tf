@@ -5,8 +5,8 @@
 # ------------------------------------------------------------------------------
 
 variable "users_account_id" {
-  type        = string
   description = "The ID of the users account.  This account will be allowed to assume the role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account."
+  type        = string
 }
 
 # ------------------------------------------------------------------------------
@@ -16,25 +16,25 @@ variable "users_account_id" {
 # ------------------------------------------------------------------------------
 
 variable "aws_region" {
-  type        = string
-  description = "The AWS region where the non-global resources for the example Pettifogger0 account are to be provisioned (e.g. \"us-east-1\")."
   default     = "us-east-1"
+  description = "The AWS region where the non-global resources for the example Pettifogger0 account are to be provisioned (e.g. \"us-east-1\")."
+  type        = string
 }
 
 variable "provisionaccount_role_description" {
-  type        = string
-  description = "The description to associate with the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account."
   default     = "Allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account."
+  description = "The description to associate with the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account."
+  type        = string
 }
 
 variable "provisionaccount_role_name" {
-  type        = string
-  description = "The name to assign the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account."
   default     = "ProvisionAccount"
+  description = "The name to assign the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account."
+  type        = string
 }
 
 variable "tags" {
-  type        = map(string)
-  description = "Tags to apply to all AWS resources created."
   default     = {}
+  description = "Tags to apply to all AWS resources created."
+  type        = map(string)
 }
