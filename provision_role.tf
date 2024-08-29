@@ -32,3 +32,9 @@ resource "aws_iam_role_policy_attachment" "eventbridge_policy_attachment" {
   policy_arn = aws_iam_policy.eventbridge.arn
   role       = aws_iam_role.provisionaccount_role.name
 }
+
+# This policy allows us to create Lambda functions
+resource "aws_iam_role_policy_attachment" "lambda_policy_attachment" {
+  policy_arn = aws_iam_policy.lambda.arn
+  role       = aws_iam_role.provisionaccount_role.name
+}
