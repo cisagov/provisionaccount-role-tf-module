@@ -3,6 +3,10 @@
 # necessary to create an EventBridge rule that is triggered whenever a
 # new IAM or SSO user is created, as well as connect a target to that
 # rule.
+#
+# This is also used to create an EventBridge rule that is run at a
+# fixed cadence with a Lambda target that disables AWS access for
+# inactive users.
 # ------------------------------------------------------------------------------
 
 data "aws_iam_policy_document" "eventbridge" {
