@@ -6,6 +6,7 @@
 
 variable "users_account_id" {
   description = "The ID of the users account.  This account will be allowed to assume the role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account."
+  nullable    = false
   type        = string
 }
 
@@ -18,23 +19,27 @@ variable "users_account_id" {
 variable "aws_region" {
   default     = "us-east-1"
   description = "The AWS region where the non-global resources for the example Pettifogger0 account are to be provisioned (e.g. \"us-east-1\")."
+  nullable    = false
   type        = string
 }
 
 variable "provisionaccount_role_description" {
   default     = "Allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account."
   description = "The description to associate with the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account."
+  nullable    = false
   type        = string
 }
 
 variable "provisionaccount_role_name" {
   default     = "ProvisionAccount"
   description = "The name to assign the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account."
+  nullable    = false
   type        = string
 }
 
 variable "tags" {
   default     = {}
   description = "Tags to apply to all AWS resources created."
+  nullable    = false
   type        = map(string)
 }
