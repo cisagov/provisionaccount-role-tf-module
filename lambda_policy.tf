@@ -30,6 +30,7 @@ data "aws_iam_policy_document" "lambda" {
       "logs:DeleteLogGroup",
       "logs:DescribeLogGroups",
       "logs:ListTagsLogGroup",
+      "logs:ListTagsForResource",
       "logs:PutRetentionPolicy",
       "logs:TagLogGroup",
       "logs:TagResource",
