@@ -10,7 +10,7 @@ that the role can be assumed via IAM.
 
 ```hcl
 module "provisionaccount" {
-  source = "github.com/cisagov/provisionaccount-role-tf-module"
+  source = "github.com/cisagov/provisionaccount-role-tf-module?ref=v1.0.1"
 
   provisionaccount_role_description          = "Allows sufficient permissions to provision all AWS resources in the DNS account."
   provisionaccount_role_name                 = "ProvisionAccount"
