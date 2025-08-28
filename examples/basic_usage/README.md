@@ -78,7 +78,7 @@ changes by simply re-running `terraform apply -var-file=dev.tfvars`.
 | Name | Version |
 |------|---------|
 | terraform | ~> 1.1 |
-| aws | ~> 4.9 |
+| aws | ~> 6.7 |
 
 ## Providers ##
 
