@@ -76,18 +76,21 @@ changes by simply re-running `terraform apply -var-file=dev.tfvars`.
 ## Requirements ##
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | terraform | ~> 1.1 |
 | aws | ~> 6.7 |
 
 ## Providers ##
 
+| ---- | ------- |
 No providers.
+| Name | Version |
+| aws | ~> 6.7 |
 
 ## Modules ##
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | provisionaccount | ../.. | n/a |
 
 ## Resources ##
@@ -97,7 +100,7 @@ No resources.
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | aws\_region | The AWS region where the non-global resources for the example Pettifogger0 account are to be provisioned (e.g. "us-east-1"). | `string` | `"us-east-1"` | no |
 | provisionaccount\_role\_description | The description to associate with the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. | `string` | `"Allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account."` | no |
 | provisionaccount\_role\_name | The name to assign the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. | `string` | `"ProvisionAccount"` | no |
@@ -107,6 +110,6 @@ No resources.
 ## Outputs ##
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | provisionaccount\_role\_arn | The ARN of the IAM role that allows sufficient permissions to provision all AWS resources in the example Pettifogger0 account. |
 <!-- END_TF_DOCS -->
