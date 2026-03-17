@@ -82,10 +82,7 @@ changes by simply re-running `terraform apply -var-file=dev.tfvars`.
 
 ## Providers ##
 
-| ---- | ------- |
 No providers.
-| Name | Version |
-| aws | ~> 6.7 |
 
 ## Modules ##
 
