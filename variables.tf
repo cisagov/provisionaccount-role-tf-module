@@ -28,7 +28,7 @@ variable "users_account_id" {
 # These parameters have reasonable defaults.
 # ------------------------------------------------------------------------------
 variable "eventbridge_policy_description" {
-  default     = "Allows sufficient permissions to create an EventBridge rule that is triggered whenever a new IAM or SSO user is created, as well as connect a target to that rule, in the new account.  Also alows sufficient permissions to create an EventBridge rule that is run at a fixed cadence with a Lambda target that disables AWS access for inactive users."
+  default     = "Allows sufficient permissions to create an EventBridge rule that is triggered whenever a new IAM or SSO user is created, as well as connect a target to that rule, in the new account.  Also allows sufficient permissions to create an EventBridge rule that is run at a fixed cadence with a Lambda target that disables AWS access for inactive users."
   description = "The description to associate with the IAM policy that allows sufficient permissions to create an EventBridge rule that is triggered whenever a new IAM or SSO user is created, as well as connect a target to that rule, in the new account.  This policy is also used to create an EventBridge rule that is run at a fixed cadence with a Lambda target that disables AWS access for inactive users."
   nullable    = false
   type        = string
