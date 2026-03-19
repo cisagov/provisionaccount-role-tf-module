@@ -28,14 +28,14 @@ module "provisionaccount" {
 ## Requirements ##
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | terraform | >= 1.1 |
 | aws | >= 4.9 |
 
 ## Providers ##
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | aws | >= 4.9 |
 
 ## Modules ##
@@ -45,7 +45,7 @@ No modules.
 ## Resources ##
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_iam_policy.eventbridge](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_policy.lambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_policy.sns](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
@@ -63,9 +63,9 @@ No modules.
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | aws\_region | The AWS region where the non-global resources for the new account are to be provisioned (e.g. "us-east-1"). | `string` | `"us-east-1"` | no |
-| eventbridge\_policy\_description | The description to associate with the IAM policy that allows sufficient permissions to create an EventBridge rule that is triggered whenever a new IAM or SSO user is created, as well as connect a target to that rule, in the new account.  This policy is also used to create an EventBridge rule that is run at a fixed cadence with a Lambda target that disables AWS access for inactive users. | `string` | `"Allows sufficient permissions to create an EventBridge rule that is triggered whenever a new IAM or SSO user is created, as well as connect a target to that rule, in the new account.  Also alows sufficient permissions to create an EventBridge rule that is run at a fixed cadence with a Lambda target that disables AWS access for inactive users."` | no |
+| eventbridge\_policy\_description | The description to associate with the IAM policy that allows sufficient permissions to create an EventBridge rule that is triggered whenever a new IAM or SSO user is created, as well as connect a target to that rule, in the new account.  This policy is also used to create an EventBridge rule that is run at a fixed cadence with a Lambda target that disables AWS access for inactive users. | `string` | `"Allows sufficient permissions to create an EventBridge rule that is triggered whenever a new IAM or SSO user is created, as well as connect a target to that rule, in the new account.  Also allows sufficient permissions to create an EventBridge rule that is run at a fixed cadence with a Lambda target that disables AWS access for inactive users."` | no |
 | eventbridge\_policy\_name | The name to assign the IAM policy that allows sufficient permissions to create an EventBridge rule that is triggered whenever a new IAM or SSO user is created, as well as connect a target to that rule, in the new account.  This policy is also used to create an EventBridge rule that is run at a fixed cadence with a Lambda target that disables AWS access for inactive users. | `string` | `"NewUserEventBridgePolicy"` | no |
 | lambda\_policy\_description | The description to associate with the IAM policy that allows sufficient permissions to create a Lambda function in the new account. | `string` | `"Allows sufficient permissions to create a Lambda function in the new account."` | no |
 | lambda\_policy\_name | The name to assign the IAM policy that allows sufficient permissions to create a Lambda function in the new account. | `string` | `"LambdaPolicy"` | no |
@@ -78,7 +78,7 @@ No modules.
 ## Outputs ##
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | provisionaccount\_role | The IAM role that allows sufficient permissions to provision all AWS resources in this account. |
 <!-- END_TF_DOCS -->
 
